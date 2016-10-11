@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Generates a SOAP client from the WSDL exposed by the Shouty server.
+#
+# Once the code is generated, an instance of the SOAP client can be
+# created with the following Java snippet:
+#
+#     private final ShoutyWs shoutyWs = new ShoutyService().getShoutyPort();
+#
+wsimport -keep -s src/test/java -Xnocompile -p io.cucumber.shouty.ws http://shouty-java-ws.herokuapp.com/ws?wsdl
